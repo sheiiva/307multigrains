@@ -8,7 +8,6 @@
 #                                          #
 ############################################
 
-
 class Multigrains():
 
     """
@@ -16,12 +15,12 @@ class Multigrains():
     """
 
     def __init__(self):
-        self._n = 0
+        self._total = 0
 
-    def run(self) -> None:
+    def run(self, argv: list) -> None:
 
         """
         Run computations and process output printing.
         """
-        
+
         return 0

@@ -26,7 +26,7 @@ def main():
     elif argsManager.checkArgs(argv) == 84:
         exit(84)
     else:
-        Multigrains().run()
+        Multigrains().run(argv)
 
 
 if __name__ == "__main__":
