@@ -1,0 +1,18 @@
+############################################
+#                MATHEMATICS               #
+############################################
+#                                          #
+#           COUTRET-ROZET Corentin         #
+#                                          #
+#             Project : 303make            #
+#                                          #
+############################################
+
+*__pycache__
+*vscode*
+tmp
+
+# PYTESTS
+htmlcov
+.coverage
+.pytest_cache
