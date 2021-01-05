@@ -16,3 +16,6 @@ tmp
 htmlcov
 .coverage
 .pytest_cache
+
+# BINARY
+307multigrains
