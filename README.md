@@ -1,7 +1,7 @@
-303make
+307multigrains
 ===
 
-Time:       2 weeks
+Time:       4 weeks
 
 Team:       1
 
@@ -10,21 +10,30 @@ Language:   Python
 
 The project
 ----
-As you know, when compiling a program, only the files that are dependent on recently modified sources are effectively recompiled during a [**Make function call**](https://www.gnu.org/software/make/manual/html_node/Functions.html). In order to do this, this binary parses the **Makefile** in the current folder so that a dependency graph can be generated.Next, it analyzes this graph in order to execute the **minimum amount of compilations**.
+Jean-Eude grows grains: oat, wheat, corn, barley and soy. He uses four different types of fertilizers (F1, F2, F3 and F4), in the following quantities (per ton of fertilizer in order to produce one unit of grains):
 
+![](deps/grains.png)
 
-In this project you must simulate the behavior of Make by reconstructing the dependency graph, and then **display all of the commands to be executed** after a source file is modified.First, you’ll need to display the adjacency matrix and the dependency strings.
+Keeping in mind that he has limited yearly quantities of each type of fertilizer, he would like to optimize his output according to the grains’ prices. You’re going to develop a program that will take his fertilizer resources and the prices of each type of grain as parameter. It will display the quantities to produce, as well as the total value of his output.
 
 
 ## USAGE:
 
 ```
->> ./303make -h
+>> ./307multigrains -h
 USAGE
-    ./303make makefile [file]
+    ./307multigrains n1 n2 n3 n4 po pw pc pb ps
+
 DESCRIPTION
-    makefile    name of the makefile
-    file        name of a recently modified file
+    n1  number of tons of fertilizer F1
+    n2  number of tons of fertilizer F2
+    n3  number of tons of fertilizer F3
+    n4  number of tons of fertilizer F4
+    po  price of one unit of oat
+    pw  price of one unit of wheat
+    pc  price of one unit of corn
+    pb  price of one unit of barley
+    ps  price of one unit of soy
 ```
 
 Author [**Corentin COUTRET-ROZET**](https://github.com/sheiiva)
