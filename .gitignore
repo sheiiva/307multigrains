@@ -4,7 +4,7 @@
 #                                          #
 #           COUTRET-ROZET Corentin         #
 #                                          #
-#             Project : 303make            #
+#          Project : 307multigrains        #
 #                                          #
 ############################################
 

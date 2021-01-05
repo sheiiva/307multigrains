@@ -19,8 +19,7 @@ class Usage():
         Show usage of the program.
         """
 
-        print(
-            "USAGE\n"
+        print("USAGE\n"
             "\t./307multigrains n1 n2 n3 n4 po pw pc pb ps\n"
             "\n"
             "DESCRIPTION\n"
