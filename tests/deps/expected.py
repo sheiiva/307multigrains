@@ -9,33 +9,16 @@
 ############################################
 
 
-HELP_MESSAGE = "\
-USAGE\n\
-\t./303make makefile [file]\n\
-DESCRIPTION\n\
-\tmakefile\tname of the makefile\n\
-\tfile\t\tname of a recently modified file\n"
-
-NORMAL_CASE = "\
-[0 0 1 0 0 0]\n\
-[0 0 1 0 0 1]\n\
-[0 0 0 1 0 0]\n\
-[0 0 0 0 0 0]\n\
-[0 0 0 0 0 1]\n\
-[0 0 0 1 0 0]\n\
+HELP_MESSAGE = "USAGE\n\
+\t./307multigrains n1 n2 n3 n4 po pw pc pb ps\n\
 \n\
-fc.c -> fc.o -> tty\n\
-fc.h -> fc.o -> tty\n\
-fc.h -> tty.o -> tty\n\
-fc.o -> tty\n\
-tty.c -> tty.o -> tty\n\
-tty.o -> tty\n"
-
-TTY_C_CASE="\
-cc -c tty.c\n\
-cc -o tty tty.o fc.o\n"
-
-FC_H_CASE="\
-cc -c fc.c\n\
-cc -c tty.c\n\
-cc -o tty tty.o fc.o\n"
+DESCRIPTION\n\
+\tn1\tnumber of tons of fertilizer F1\n\
+\tn2\tnumber of tons of fertilizer F2\n\
+\tn3\tnumber of tons of fertilizer F3\n\
+\tn4\tnumber of tons of fertilizer F4\n\
+\tpo\tprice of one unit of oat\n\
+\tpw\tprice of one unit of wheat\n\
+\tpc\tprice of one unit of corn\n\
+\tpb\tprice of one unit of barley\n\
+\tps\tprice of one unit of soy\n"
