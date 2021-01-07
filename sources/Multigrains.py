@@ -8,6 +8,10 @@
 #                                          #
 ############################################
 
+from copy import deepcopy
+
+from sources.Matrix import Matrix
+
 class Multigrains():
 
     """
@@ -20,7 +24,7 @@ class Multigrains():
                         'Wheat':    [0, 2, 1, 0],
                         'Corn':     [1, 0, 0, 3],
                         'Barley':   [0, 1, 1, 1],
-                        'Soy':      [2, 0, 0 , 2]}
+                        'Soy':      [2, 0, 0, 2]}
         self._ressources = [0, 0, 0, 0]
         self._prices = [0, 0, 0, 0, 0]
         self._production = [0, 0, 0, 0, 0]
@@ -52,6 +56,35 @@ class Multigrains():
         print()
         print("Total production value: ${:.2f}".format(self._total))
 
+    def applyPrices(self, products: list, matrix: Matrix) -> None:
+
+        for i in range(4):
+            if products[i] != -1:
+                if matrix._matrix[i][-1] != 0:
+                    self._total += matrix._matrix[i][-1] * self._prices[products[i]]
+                self._production[products[i]] = matrix._matrix[i][-1]
+
+    def compute(self) -> None:
+
+        """Compute productions quota for each grain type.
+        """
+
+        matrix = Matrix({"n1": self._ressources[0], "n2": self._ressources[1], "n3": self._ressources[2],
+                        "n4": self._ressources[3], "po": self._prices[0], "pw": self._prices[1],
+                        "pc": self._prices[2], "pb":self._prices[3], "ps": self._prices[4]})
+        
+
+        products = [-1, -1, -1, -1]
+
+        for i in range(5):
+            pivot_x, pivot_y = matrix.getPivot(deepcopy(self._prices))
+            if pivot_x < 0 or pivot_y < 0:
+                break
+            matrix.applyPivot(pivot_x, pivot_y)
+            products[pivot_y] = pivot_x
+
+        self.applyPrices(products, matrix)
+
     def run(self, argv: list) -> None:
 
         """
@@ -59,5 +92,5 @@ class Multigrains():
         """
 
         self.parse(argv)
-        # self.compute()
+        self.compute()
         self.display()
