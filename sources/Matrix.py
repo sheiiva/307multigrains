@@ -31,7 +31,7 @@ class Matrix():
 
         return matrix
 
-    def getPivot(self, prices) -> tuple:
+    def getPivot(self) -> tuple:
 
         """Get for matrix pivot.
 
@@ -39,24 +39,17 @@ class Matrix():
             dict: pivot coordinates such as {x: value, y: value}
         """
 
-        maxx = 10
         maxy = 5
-        prices = [price * -1 for price in prices]
+        maxx = 10
+
+        prices = self.getPrices()
+        
         minPrice = min(prices)
 
         y = -1
         x = prices.index(minPrice)
         #
         minPrice = 99999999999999
-
-
-        print("------------")
-        print(f"max_x: {maxx}")
-        print(f"max_y: {maxy}")
-        print(f"copyPrices: {prices}")
-        print(f"minV: {minPrice}")
-        print(f"xPivot: {x}")
-        print(f"yPivot: {y}")
 
         for i in range(maxy):
 
@@ -69,9 +62,6 @@ class Matrix():
                 y = i
                 minPrice = self._matrix[i][maxx - 1] / self._matrix[i][x]
 
-        print("----")
-        print(f"X: {x}")
-        print(f"Y: {y}")
         return (x, y)
 
     def applyPivot(self, xpivot: int, ypivot: int) -> None:
@@ -85,12 +75,6 @@ class Matrix():
 
         pivotValue = self._matrix[ypivot][xpivot]
 
-        # print("****")
-        # print(pivotValue)
-        # print(ypivot)
-        # print("****")
-
-
         for i in range(len(self._matrix[ypivot])):
             self._matrix[ypivot][i] /= pivotValue
 
@@ -103,3 +87,7 @@ class Matrix():
             k = self._matrix[i][xpivot]
             for j in range(maxx):
                 self._matrix[i][j] -= k * self._matrix[ypivot][j]
+
+    def getPrices(self) -> list:
+
+        return self._matrix[-1][:5]

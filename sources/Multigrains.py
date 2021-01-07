@@ -58,6 +58,8 @@ class Multigrains():
 
     def applyPrices(self, products: list, matrix: Matrix) -> None:
 
+        print(products)
+
         for i in range(4):
             if products[i] != -1:
                 if matrix._matrix[i][-1] != 0:
@@ -72,17 +74,15 @@ class Multigrains():
         matrix = Matrix({"n1": self._ressources[0], "n2": self._ressources[1], "n3": self._ressources[2],
                         "n4": self._ressources[3], "po": self._prices[0], "pw": self._prices[1],
                         "pc": self._prices[2], "pb":self._prices[3], "ps": self._prices[4]})
-        
 
         products = [-1, -1, -1, -1]
 
         for i in range(5):
-            pivot_x, pivot_y = matrix.getPivot(deepcopy(self._prices))
+            pivot_x, pivot_y = matrix.getPivot()
             if pivot_x < 0 or pivot_y < 0:
                 break
             matrix.applyPivot(pivot_x, pivot_y)
             products[pivot_y] = pivot_x
-
         self.applyPrices(products, matrix)
 
     def run(self, argv: list) -> None:
