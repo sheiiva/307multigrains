@@ -22,3 +22,25 @@ DESCRIPTION\n\
 \tpc\tprice of one unit of corn\n\
 \tpb\tprice of one unit of barley\n\
 \tps\tprice of one unit of soy\n"
+
+CASE_1_OUTPUT = "\
+Resources: 10 F1, 100 F2, 10 F3, 0 F4\n\
+\n\
+Oat: 0 units at $200/unit\n\
+Wheat: 10.00 units at $200/unit\n\
+Corn: 0 units at $200/unit\n\
+Barley: 0 units at $200/unit\n\
+Soy: 0 units at $200/unit\n\
+\n\
+Total production value: $2000.00\n"
+
+CASE_2_OUTPUT = "\
+Resources: 45 F1, 41 F2, 21 F3, 63 F4\n\
+\n\
+Oat: 0 units at $198/unit\n\
+Wheat: 20.00 units at $259/unit\n\
+Corn: 8.50 units at $257/unit\n\
+Barley: 1.00 units at $231/unit\n\
+Soy: 18.25 units at $312/unit\n\
+\n\
+Total production value: $13289.50\n"

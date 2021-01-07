@@ -47,7 +47,11 @@ class Multigrains():
 
         def displayProduction(i=0) -> None:
             for grain in self._grains:
-                print(f"{grain}: {self._production[i]} units at ${self._prices[i]}/unit")
+                if self._production[i] == 0:
+                    print(f"{grain}: 0 units at ${self._prices[i]}/unit")
+                else:
+                    print("{}: {:.2f} units at ${}/unit".format(
+                            grain, self._production[i], self._prices[i]))
                 i += 1
 
         print(f"Resources: {self._ressources[0]} F1, {self._ressources[1]} F2, {self._ressources[2]} F3, {self._ressources[3]} F4")
@@ -57,8 +61,6 @@ class Multigrains():
         print("Total production value: ${:.2f}".format(self._total))
 
     def applyPrices(self, products: list, matrix: Matrix) -> None:
-
-        print(products)
 
         for i in range(4):
             if products[i] != -1:

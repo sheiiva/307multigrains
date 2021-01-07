@@ -19,6 +19,7 @@ TESTS		=	tests/
 
 
 TESTS_SRC	=	$(TESTS)t_ArgumentManager.py		\
+				$(TESTS)t_Multigrains.py			\
 				$(TESTS)t_Usage.py					\
 
 
