@@ -43,7 +43,6 @@ class Matrix():
         maxx = 10
 
         prices = self.getPrices()
-        
         minPrice = min(prices)
 
         y = -1
@@ -53,14 +52,14 @@ class Matrix():
 
         for i in range(maxy):
 
-            if self._matrix[i][maxx -1]:
+            if self._matrix[i][maxx - 1]:
                 if self._matrix[i][x] > 0 and (minPrice > self._matrix[i][maxx - 1] / self._matrix[i][x]
                                                 and self._matrix[i][maxx - 1] / self._matrix[i][x] > 0):
-                    y = i
                     minPrice = self._matrix[i][maxx - 1] / self._matrix[i][x]
+                    y = i
             elif minPrice > self._matrix[i][x] and self._matrix[i][x] > 0:
-                y = i
                 minPrice = self._matrix[i][maxx - 1] / self._matrix[i][x]
+                y = i
 
         return (x, y)
 
@@ -82,11 +81,10 @@ class Matrix():
         maxy = 5
 
         for i in range(maxy):
-            if i == ypivot:
-                continue
-            k = self._matrix[i][xpivot]
-            for j in range(maxx):
-                self._matrix[i][j] -= k * self._matrix[ypivot][j]
+            if i != ypivot:
+                k = self._matrix[i][xpivot]
+                for j in range(maxx):
+                    self._matrix[i][j] -= k * self._matrix[ypivot][j]
 
     def getPrices(self) -> list:
 

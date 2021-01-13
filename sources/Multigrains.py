@@ -12,6 +12,7 @@ from copy import deepcopy
 
 from sources.Matrix import Matrix
 
+
 class Multigrains():
 
     """
@@ -75,7 +76,7 @@ class Multigrains():
 
         matrix = Matrix({"n1": self._ressources[0], "n2": self._ressources[1], "n3": self._ressources[2],
                         "n4": self._ressources[3], "po": self._prices[0], "pw": self._prices[1],
-                        "pc": self._prices[2], "pb":self._prices[3], "ps": self._prices[4]})
+                        "pc": self._prices[2], "pb": self._prices[3], "ps": self._prices[4]})
 
         products = [-1, -1, -1, -1]
 
